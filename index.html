@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leem</title>
-  <style>
-    /* Animation d'apparition fluide */
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
+ <style>
     body {
         background-color: black;
         color: white;
@@ -19,38 +13,43 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* Le "center" ici place tout le bloc au milieu de l'écran */
-        justify-content: center; 
-        height: 100vh;
-        font-family: 'Inter', -apple-system, sans-serif;
-        overflow: hidden; /* Évite le défilement inutile */
+        justify-content: center; /* Centre le bloc entier verticalement */
+        min-height: 100vh; /* S'assure de prendre toute la hauteur */
+        width: 100vw;
+        font-family: sans-serif;
+        overflow: hidden; /* Empêche de scroller inutilement */
+    }
+
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .video-container {
         width: 90%;
-        max-width: 900px; /* Taille optimale pour ordi */
-        /* Margin-bottom réduit pour coller le texte à la vidéo */
-        margin-bottom: 10px; 
-        animation: fadeIn 1.2s ease-out;
+        max-width: 800px; /* Taille idéale pour que tout tienne sur un écran d'ordi */
+        margin-bottom: 20px; /* Espace réduit entre vidéo et texte */
     }
 
     video {
         width: 100%;
+        height: auto;
         display: block;
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     #countdown {
         text-align: center;
         width: 100%;
-        /* Taille adaptative : gros sur ordi, lisible sur mobile */
-        font-size: clamp(1.8rem, 8vw, 4.5rem); 
+        font-size: clamp(2rem, 8vw, 5rem); /* Taille qui s'adapte à l'écran */
         font-weight: 900;
+        letter-spacing: -2px;
         text-transform: uppercase;
-        letter-spacing: -1px;
-        color: #ffffff;
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        animation: fadeIn 1.5s ease-out;
+        /* Ajout d'une couleur vive pour être sûr de le voir */
+        color: white; 
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     }
 </style>
 </head>
