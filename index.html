@@ -4,45 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leem</title>
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-    /* On ne centre plus verticalement au milieu de l'écran */
-    justify-content: flex-start; 
-    padding-top: 5vh; /* Petit espace en haut de l'écran */
-    height: 100vh;
-    margin: 0;
-    font-family: sans-serif;
-        }
+  <style>
+    /* Animation d'apparition fluide */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        .video-container {
-            /* On augmente la largeur ici */
-            width: 95%;
-            max-width: 1800px; 
-            margin-bottom: 10px;
-        }
+    body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Le "center" ici place tout le bloc au milieu de l'écran */
+        justify-content: center; 
+        height: 100vh;
+        font-family: 'Inter', -apple-system, sans-serif;
+        overflow: hidden; /* Évite le défilement inutile */
+    }
 
-        video {
-            width: 100%;
-            border-radius: 20px;
-        }
+    .video-container {
+        width: 90%;
+        max-width: 900px; /* Taille optimale pour ordi */
+        /* Margin-bottom réduit pour coller le texte à la vidéo */
+        margin-bottom: 10px; 
+        animation: fadeIn 1.2s ease-out;
+    }
 
-        #countdown {
-            /* Style agrandi et plus moderne */
-            text-align: center; /* Force le texte au milieu */
-    width: 100%;
-            color: #ADAAA6;
-            font-size: clamp(2rem, 10vw, 6rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        }
-    </style>
+    video {
+        width: 100%;
+        display: block;
+        border-radius: 15px;
+    }
+
+    #countdown {
+        text-align: center;
+        width: 100%;
+        /* Taille adaptative : gros sur ordi, lisible sur mobile */
+        font-size: clamp(1.8rem, 8vw, 4.5rem); 
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -1px;
+        color: #ffffff;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        animation: fadeIn 1.5s ease-out;
+    }
+</style>
 </head>
 <body>
 
