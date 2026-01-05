@@ -11,17 +11,19 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
+    /* On ne centre plus verticalement au milieu de l'écran */
+    justify-content: flex-start; 
+    padding-top: 5vh; /* Petit espace en haut de l'écran */
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
         }
 
         .video-container {
             /* On augmente la largeur ici */
             width: 95%;
             max-width: 1800px; 
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         video {
