@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leem</title>
- <style>
+<style>
     body {
         background-color: black;
         color: white;
@@ -13,11 +13,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* Centre le bloc entier verticalement */
-        min-height: 100vh; /* S'assure de prendre toute la hauteur */
+        /* "flex-start" va tout envoyer vers le haut au lieu de centrer au milieu de l'écran */
+        justify-content: flex-start; 
+        height: 100vh;
         width: 100vw;
         font-family: sans-serif;
-        overflow: hidden; /* Empêche de scroller inutilement */
+        overflow: hidden;
     }
 
     .main-wrapper {
@@ -25,12 +26,15 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
+        /* On ajuste la position haute ici : 5vh = 5% de la hauteur de l'écran */
+        padding-top: 2vh; 
     }
 
     .video-container {
-        width: 90%;
-        max-width: 800px; /* Taille idéale pour que tout tienne sur un écran d'ordi */
-        margin-bottom: 20px; /* Espace réduit entre vidéo et texte */
+        width: 85%;
+        /* On réduit encore un peu la taille max pour laisser de la place au texte en dessous */
+        max-width: 700px; 
+        margin-bottom: 5px; /* On colle presque le texte à la vidéo */
     }
 
     video {
@@ -43,13 +47,13 @@
     #countdown {
         text-align: center;
         width: 100%;
-        font-size: clamp(2rem, 8vw, 5rem); /* Taille qui s'adapte à l'écran */
+        /* On réduit un peu la taille pour être sûr que ça ne sorte pas de l'écran */
+        font-size: clamp(1.5rem, 6vw, 4rem); 
         font-weight: 900;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
         text-transform: uppercase;
-        /* Ajout d'une couleur vive pour être sûr de le voir */
-        color: #CDCCCB; 
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        color: #CDCCCB;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 </style>
 </head>
