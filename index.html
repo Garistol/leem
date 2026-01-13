@@ -5,34 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LEEM</title>
     <style>
-        /* Supprime toutes les marges et fixe le fond en noir */
         body, html {
-            background-color: black;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            align-items: center; /* Centre verticalement */
-            justify-content: center; /* Centre horizontalement */
-            overflow: hidden; /* Empêche le défilement */
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            overflow: hidden; /* Supprime le scroll */
         }
 
-        .video-container {
-            width: 90%; /* Prend 90% de la largeur sur mobile */
-            max-width: 800px; /* Taille maximum sur ordinateur */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         video {
-            width: 100%;
+            /* Ces lignes forcent la vidéo à couvrir tout l'écran */
+            min-width: 100%; 
+            min-height: 100%;
+            width: auto;
             height: auto;
-            display: block;
+            object-fit: cover; /* Coupe légèrement les bords pour remplir tout l'espace */
         }
     </style>
 </head>
 <body>
 
-    <div class="video-container">
+    <div class="video-background">
         <video autoplay loop muted playsinline>
             <source src="video.mp4" type="video/mp4">
         </video>
