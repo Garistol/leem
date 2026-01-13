@@ -3,59 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leem</title>
-<style>
-    body {
-        background-color: black;
-        color: white;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* "flex-start" va tout envoyer vers le haut au lieu de centrer au milieu de l'écran */
-        justify-content: flex-start; 
-        height: 100vh;
-        width: 100vw;
-        font-family: sans-serif;
-        overflow: hidden;
-    }
+    <title>LEEM</title>
+    <style>
+        /* Supprime toutes les marges et fixe le fond en noir */
+        body, html {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center; /* Centre verticalement */
+            justify-content: center; /* Centre horizontalement */
+            overflow: hidden; /* Empêche le défilement */
+        }
 
-    .main-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        /* On ajuste la position haute ici : 5vh = 5% de la hauteur de l'écran */
-        padding-top: 2vh; 
-    }
+        .video-container {
+            width: 90%; /* Prend 90% de la largeur sur mobile */
+            max-width: 800px; /* Taille maximum sur ordinateur */
+        }
 
-    .video-container {
-        width: 85%;
-        /* On réduit encore un peu la taille max pour laisser de la place au texte en dessous */
-        max-width: 700px; 
-        margin-bottom: 5px; /* On colle presque le texte à la vidéo */
-    }
-
-    video {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 10px;
-    }
-
-    #countdown {
-        text-align: center;
-        width: 100%;
-        /* On réduit un peu la taille pour être sûr que ça ne sorte pas de l'écran */
-        font-size: clamp(1.5rem, 6vw, 4rem); 
-        font-weight: 900;
-        letter-spacing: -1px;
-        text-transform: uppercase;
-        color: #CDCCCB;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
-</style>
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
 
@@ -65,22 +38,5 @@
         </video>
     </div>
 
-    <div id="countdown">Chargement...</div>
-
-    <script>
-        // Règle la date ici (Année, Mois-1, Jour, Heure, Minute)
-        const dateCible = new Date("January 14, 2026 18:00:00").getTime();
-
-        setInterval(function() {
-            const maintenant = new Date().getTime();
-            const distance = dateCible - maintenant;
-            const jours = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const heures = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const secondes = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = jours + "j " + heures + "h " + minutes + "m " + secondes + "s";
-        }, 1000);
-    </script>
 </body>
 </html>
