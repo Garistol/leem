@@ -2,22 +2,23 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>LEEM</title>
     <style>
+        /* Supprime les marges et fixe le fond noir */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             background-color: black;
-            overflow: hidden; /* Supprime le scroll */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .video-wrapper {
             width: 100%;
             height: 100%;
             display: flex;
@@ -26,20 +27,20 @@
         }
 
         video {
-            /* Ces lignes forcent la vidéo à couvrir tout l'écran */
-            min-width: 100%; 
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            object-fit: cover; /* Coupe légèrement les bords pour remplir tout l'espace */
+            /* "contain" garantit que la vidéo est visible EN ENTIER sur téléphone */
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <div class="video-background">
+    <div class="video-wrapper">
         <video autoplay loop muted playsinline>
             <source src="video.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
         </video>
     </div>
 
